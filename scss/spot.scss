@@ -1,0 +1,200 @@
+@import "css-reset.scss";
+@import "template.scss";
+
+.header{
+    position: relative;
+    background: $dark;
+}
+.bread{
+    width: 90%;
+    max-width:1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    p{
+        padding: 5px;
+    }
+}
+@media screen and(max-width:1200px) {
+    .bread{
+        display: none;
+    }
+    
+}
+.content{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .spot{
+        display: flex;
+        align-items: end;
+        position: relative;
+        padding: 5% 0;
+        margin-bottom: 30px;
+        .img{
+            width: 40%;
+            max-width: 408px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2 ;
+            .bottom{
+                display: flex;
+                justify-content: space-between;
+                padding: 8px;
+            }
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            position: absolute;
+            left: 30%;
+            width: 70%;
+            border: 1px solid $main;
+            border-radius: 16px;
+            padding: 5% 15%;
+            .spot-title{
+                color: $main;
+                font-size: 3rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+            .tags{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+                width: 80%;
+                .tag{
+                    width: 30%;
+                    text-align: center;
+                    background: $main;
+                    margin: 2px;
+                    color: $white;
+                    padding: 3% 4%;
+                    border-radius: 40px;
+                    font-size: 0.8rem;
+                }
+            }
+            
+            .detail{
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid $main;
+                font-size: 1rem;
+                color: $main;
+                img{
+                    margin-right: 8px;
+                }
+
+            }
+        }
+    }
+    @media screen and (max-width:1200px) {
+        .spot{
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin: 0;
+            margin-top: 20px;
+            .img{
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 10px; 
+                img{
+                    margin-bottom: 10px;
+                }
+            }
+            .info{
+                position: relative;
+                width: 100%;
+                left: 0;
+                border: none;
+                padding: 0;
+            }
+        }
+        
+    }
+    .spot-description{
+        line-height: 2;
+        margin-bottom: 30px;
+    }
+    .near-block{
+        h4{
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    overflow: auto;
+    .near-btn{
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $main;
+        border-radius: 100%;
+    }
+    .card{
+        border: 1px solid rgba($main,0.2);
+        width: 18%;
+        min-width: 190px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .card-content{
+            padding: 10px;
+            .card-title{
+                color: $black;
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+            .card-tags{
+                width: 45%;
+                display: inline-block;
+                background: $main;
+                color: $white;
+                padding: 3%;
+                border-radius: 40px;
+                margin: 2px;
+                text-align: center;
+                font-size: 0.5rem;
+            }
+        }
+        .card-bottom{
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            padding: 5px;
+        }
+    }
+}
+
+@media screen and(max-width:1200px) {
+    .cards{
+        justify-content: start;
+        .near-btn{
+            display: none;
+        }
+        .card{
+            margin-right: 20px;
+            .card-content{
+                .card-tags{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}

@@ -102,10 +102,13 @@ function getAuthorizationHeader() {
          })
     .then(res => {
         citySpot = res.data ;
-        console.log(citySpot);
+
         cityTitle.textContent = citySpot[0].City
+        
         let cards = "" ;
         citySpot.forEach((i,index) => {
+            i.recommendNum = 0 ;
+
             if(!i.Picture.PictureUrl1){
                 cards +=`
             <div class="card">
@@ -114,7 +117,7 @@ function getAuthorizationHeader() {
                     <h5 class="card-title">${i.Name}</h5>
                 </div>
                 <div class="card-bottom">
-                    <p class="card-recommend" >0人推薦</p>
+                    <p class="card-recommend" >${i.recommendNum}人推薦</p>
                     <i class="fa fa-heart recommend-btn" data-id=${index}></i>
                 </div>
             </div>
@@ -189,17 +192,16 @@ function getAuthorizationHeader() {
     })
         
     }
-    let recommendNum = 0 ;
+    
 function cardClick(e) {
-
+    let id = e.target.dataset.id
+    
     if(e.target.nodeName==="I"){
-        recommendNum += 1
+        console.log(citySpot[id].recommendNum);
     }else{
         return
     }
-    const recommendTotalNum = document.querySelectorAll(".card-recommend");
-    // console.log(recommendTotalNum,e.target)
-    recommendTotalNum[e.target.dataset.id].textContent = `${recommendNum}人推薦`
+    render()
   }
 
 

@@ -54,6 +54,7 @@ a {
 
 *, *::before, *::after {
   box-sizing: border-box;
+  transition: all 1s;
 }
 
 image, svg {
@@ -243,6 +244,18 @@ body {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+  .banner .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner .search input {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
 .content {
   background: #FFF;
   padding: 50px;
@@ -259,10 +272,11 @@ body {
   justify-content: center;
 }
 .city .map {
-  width: 50%;
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
 }
 .city .map path {
   fill: #6B7AA1;
@@ -276,6 +290,7 @@ body {
   color: #6B7AA1;
   display: flex;
   flex-direction: column;
+  align-items: start;
 }
 .city .info .city-title {
   font-size: 35px;
@@ -286,8 +301,10 @@ body {
   margin-bottom: 20px;
 }
 .city .info .cards {
+  width: 100%;
   display: flex;
   margin-bottom: 60px;
+  justify-content: space-between;
 }
 .city .info .cards .card {
   border: 1px solid rgba(107, 122, 161, 0.2);
@@ -295,17 +312,20 @@ body {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  padding: 5px;
-  margin-right: 2%;
+  padding: 10px;
 }
 .city .info .cards .card .card-img {
-  border-radius: 5px;
+  height: 150px;
+  overflow: hidden;
+}
+.city .info .cards .card .card-img img {
   width: 100%;
   height: 150px;
+  border-radius: 5px;
 }
 .city .info .cards .card .card-content {
-  height: 120px;
   padding: 10px;
 }
 .city .info .cards .card .card-content .card-title {
@@ -321,11 +341,10 @@ body {
 }
 .city .info .cards .card .card-content .card-tags .card-tag {
   display: inline-block;
-  min-width: 90px;
   background: #6B7AA1;
   color: #FFF;
   text-align: center;
-  padding: 6px 2px;
+  padding: 3px 10px;
   border-radius: 40px;
   margin: 2px;
   font-size: 0.6rem;
@@ -340,6 +359,7 @@ body {
   justify-content: space-between;
   font-size: 0.75rem;
   padding: 5px;
+  width: 100%;
 }
 .city .info .cards .card .card-bottom i {
   cursor: pointer;
